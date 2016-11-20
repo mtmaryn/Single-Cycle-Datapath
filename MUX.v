@@ -1,0 +1,14 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+module MUX(input select, input[1:0] in, output out);
+    
+	wire [1:0] d;
+	
+	not not1(nselect, select);
+	and and1(d[0], select, in[0]);
+	and and2(d[1], nselect, in[1]);
+	
+	or or1(out,d[0], d[1]);
+
+endmodule
