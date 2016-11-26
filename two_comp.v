@@ -1,7 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-module two_comp(input [15:0] X, output [15:0] Y);
-	assign Y = ~X+1;
-
+module two_comp(input [15:0] X, input neg, output reg[15:0] Y);
+	always@*
+		begin
+			if(neg)
+				Y <= ~X;
+			else
+				Y <= X;
+		end
 endmodule
