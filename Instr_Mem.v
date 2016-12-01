@@ -7,22 +7,22 @@ module Instr_Mem( read, instr );
 	
 	always@(read)
 		case(read)
-			 0: instr =  0;
-			 1: instr =  2;
-			 2: instr =  4;
-			 3: instr =  6;
-			 4: instr =  8;
-			 5: instr = 10;
-			 6: instr = 12;
-			 7: instr = 14;
-			 8: instr = 16;
-			 9: instr = 18;
-			10: instr = 20;
-			11: instr = 22;
-			12: instr = 24;
-			13: instr = 26;
-			14: instr = 28;
-			15: instr = 30;
+			 0: instr = 16'b0000000000000000;
+			 1: instr = 16'b0000000000000000;
+			 2: instr = 16'b0000000000000000;
+			 3: instr = 16'b0000000000000000;
+			 4: instr = 16'b1010000000001010;
+			 5: instr = 16'b1010101010101010;
+			 6: instr = 16'b0000000000000000;
+			 7: instr = 16'b0000000000000000;
+			 8: instr = 16'b0101000000000101;
+			 9: instr = 16'b0101010101010101;
+			10: instr = 16'b0000000000000000;
+			11: instr = 16'b0000000000000000;
+			12: instr = 16'b0000000000000000;
+			13: instr = 16'b0000000000000000;
+			14: instr = 16'b0000000000000000;
+			15: instr = 16'b0000000000000000;
 			default: instr = 50;
 		endcase
 endmodule
