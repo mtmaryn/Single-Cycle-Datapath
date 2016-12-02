@@ -13,7 +13,7 @@ module Add2Com( A, B, Cin, neg, Sum, Cout);
 	wire	temp;
 	
 	
-	one_comp one1( .X(B), .neg(neg),.Y(B2C));	
+	two_comp one1( .X(B), .neg(neg),.Y(B2C));	
 	Add Add1( .A(A), .B(B2C), .Cin(neg), .Sum(Sum), .Cout(temp));
 	assign Cout = temp;
 

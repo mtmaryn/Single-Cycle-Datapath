@@ -1,13 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-module dff( clk, data, q );
-	input clk, data;
+module dff( clk, data, reset, q );
+	input clk, data, reset;
 	output reg q;
 	
 	always@(posedge clk)
 	begin
 		q <= data;
+		if(reset)
+			q <= 0;
 	end
 
 endmodule

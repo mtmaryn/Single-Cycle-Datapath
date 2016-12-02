@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-module alu(X, Y, out, Cin, Cout, lt, eq, gt, V, opcod);
+module alu(clk,X, Y, out, Cin, Cout, lt, eq, gt, V, opcod);
 	input  [15:0] X, Y;
 	input  [2:0] opcod;
-	input  Cin;
+	input  Cin,clk;
 	output [15:0] out;
 	output Cout, lt, eq, gt, V;
 	wire [16:0] add, sub, andL, orL;
@@ -16,17 +16,13 @@ module alu(X, Y, out, Cin, Cout, lt, eq, gt, V, opcod);
 	AND and1(.X(X), .Y(Y), .Z(andL));
 	comparator16bit com1( .X(X), .Y(Y), .lt(lt), .eq(eq), .gt(gt));	
 	
-	always @(opcod)
+	always @(clk)
 	begin
 		case(opcod)
 			0: temp = add;
 			1: temp = sub;
 			2: temp = andL;
 			3: temp = orL;
-			4: temp = 4;
-			5: temp = 5;
-			6: temp = 6;
-			7: temp = 7;
 			default: temp = 8;
 		endcase
 	end
