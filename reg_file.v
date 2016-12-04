@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-module reg_file( A, B, C, Aaddr, Baddr, Caddr, load, clear, clk );
+module reg_file( A, B, C, Aaddr, Baddr, Caddr, load, clear, clk, r1, r2, r3 );
 	input  load, clk, clear;
 	input  [15:0] C;
 	input  [3:0] Aaddr, Baddr, Caddr;
-	output [15:0] A, B;
+	output [15:0] A, B, r1,r2,r3;
 	
 	wire [15:0] regOut1,regOut2,regOut3,regOut4,regOut5,regOut6,regOut7,regOut8,regOut9,regOut10,regOut11,regOut12,regOut13,regOut14,regOut15,regOut16;
 	wire [15:0] slt;
@@ -33,5 +33,8 @@ module reg_file( A, B, C, Aaddr, Baddr, Caddr, load, clear, clk );
 	mux16x16x1 muxA(.select(Aaddr), .A(regOut1),.B(regOut2),.C(regOut3),.D(regOut4),.E(regOut5),.F(regOut6),.G(regOut7),.H(regOut8),.I(regOut9),.J(regOut10),.K(regOut11),.L(regOut12),.M(regOut13),.N(regOut14),.O(regOut15),.P(regOut16), .Z(A));
 	mux16x16x1 muxB(.select(Baddr), .A(regOut1),.B(regOut2),.C(regOut3),.D(regOut4),.E(regOut5),.F(regOut6),.G(regOut7),.H(regOut8),.I(regOut9),.J(regOut10),.K(regOut11),.L(regOut12),.M(regOut13),.N(regOut14),.O(regOut15),.P(regOut16), .Z(B));
 
+	assign r1 = regOut2;
+	assign r2 = regOut3;
+	assign r3 = regOut4;
 
 endmodule

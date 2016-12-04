@@ -23,6 +23,16 @@ module alu(clk,X, Y, out, Cin, Cout, lt, eq, gt, V, opcod);
 			1: temp = sub;
 			2: temp = andL;
 			3: temp = orL;
+			4: begin
+				if(lt)
+					temp = 1;
+				else 
+					temp = 0;
+				end
+			5:begin
+				if(eq)
+					temp = 0;
+				end
 			default: temp = 8;
 		endcase
 	end

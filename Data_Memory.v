@@ -9,22 +9,22 @@ module Data_Memory( clk, MemWrite, MemRead, Address, WriteData, ReadData );
 	
 	reg[15:0]d_mm[0:15];
 	initial begin
-		d_mm[0]  = 16'h00F0;
-		d_mm[1]  = 16'h0000;
-		d_mm[2]  = 16'h0000;
-		d_mm[3]  = 16'h0000;
-		d_mm[4]  = 16'h0000;
-		d_mm[5]  = 16'h0000;
-		d_mm[6]  = 16'h0000;
-		d_mm[7]  = 16'h0000;
-		d_mm[8]  = 16'h0000;
-		d_mm[9]  = 16'h0000;
-		d_mm[10] = 16'h0000;
-		d_mm[11] = 16'h0000;
-		d_mm[12] = 16'h0000;
-		d_mm[13] = 16'h0000;
-		d_mm[14] = 16'h0000;
-		d_mm[15] = 16'h0000;
+		d_mm[0]  = 16'h0001;
+		d_mm[1]  = 16'h0004;
+		d_mm[2]  = 16'h0006;
+		d_mm[3]  = 16'h0004;
+		d_mm[4]  = 16'h0005;
+		d_mm[5]  = 16'h0006;
+		d_mm[6]  = 16'h0001;
+		d_mm[7]  = 16'h0001;
+		d_mm[8]  = 16'h0001;
+		d_mm[9]  = 16'h0001;
+		d_mm[10] = 16'h0001;
+		d_mm[11] = 16'h0001;
+		d_mm[12] = 16'h0001;
+		d_mm[13] = 16'h0001;
+		d_mm[14] = 16'h0001;
+		d_mm[15] = 16'h0001;
 	end
 
 	always@(clk)
